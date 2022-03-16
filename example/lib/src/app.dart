@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const FirstPage(),
+      debugShowCheckedModeBanner: false,
       builder: (context, child) => FlavorBanner(
         child: child ?? Container(),
       ),

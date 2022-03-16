@@ -9,6 +9,8 @@ void main() {
     values: FlavorValues(
       baseUrl: "https://staging.com/",
       showBanner: true,
+      alignment: Alignment.topRight,
+      location: BannerLocation.topEnd,
     ),
   );
   runApp(const MyApp());

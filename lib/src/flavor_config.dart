@@ -5,12 +5,19 @@ import 'utils/string_extension.dart';
 enum Flavor { TEST, DEV, STAGING, PROD }
 
 class FlavorValues {
-  FlavorValues({this.baseUrl, this.showBanner = false});
+  FlavorValues({
+    this.baseUrl,
+    this.showBanner = false,
+    this.alignment = Alignment.topLeft,
+    this.location = BannerLocation.topStart,
+  });
 
   final String? baseUrl;
   final bool showBanner;
+  final AlignmentGeometry alignment;
+  final BannerLocation location;
 
-  // Can add other flavor specific values, e.g database name
+// Can add other flavor specific values, e.g database name
 }
 
 class FlavorConfig {
@@ -54,4 +61,7 @@ class FlavorConfig {
 
   /// If show banner, return [true]
   static bool showBanner() => _instance!.values.showBanner == true;
+
+  static AlignmentGeometry alignment() => _instance!.values.alignment;
+  static BannerLocation location() => _instance!.values.location;
 }

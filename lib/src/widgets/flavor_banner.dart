@@ -37,18 +37,18 @@ class _FlavorBannerState extends State<FlavorBanner> {
     bannerConfig ??= _getDefaultBanner();
     return Stack(
       children: <Widget>[
-        GestureDetector(
-            child: widget.child, onTap: () => showDeviceInfo(false)),
-        _buildBanner(context),
+        GestureDetector(child: widget.child, onTap: () => showDeviceInfo(false)),
+        Align(
+          alignment: FlavorConfig.alignment(),
+          child: _buildBanner(context),
+        ),
         showDeviceInfoDialog == true ? const DeviceInfoDialog() : Container(),
       ],
     );
   }
 
   BannerConfig _getDefaultBanner() {
-    return BannerConfig(
-        bannerName: FlavorConfig.instance!.name,
-        bannerColor: FlavorConfig.instance!.color);
+    return BannerConfig(bannerName: FlavorConfig.instance!.name, bannerColor: FlavorConfig.instance!.color);
   }
 
   Widget _buildBanner(BuildContext context) {
@@ -62,7 +62,7 @@ class _FlavorBannerState extends State<FlavorBanner> {
               message: bannerConfig!.bannerName,
               textDirection: Directionality.of(context),
               layoutDirection: Directionality.of(context),
-              location: BannerLocation.topStart,
+              location: FlavorConfig.location(),
               color: bannerConfig!.bannerColor),
         ),
       ),
