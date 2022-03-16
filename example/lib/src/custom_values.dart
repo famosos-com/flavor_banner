@@ -6,6 +6,7 @@ class CustomValues extends FlavorValues {
     String? baseUrl,
     bool showBanner = false,
     BannerLocation location = BannerLocation.topStart,
+    AlignmentGeometry alignment = Alignment.topLeft,
     required this.mapsApiKey,
   });
 

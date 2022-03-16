@@ -50,6 +50,8 @@ void main() {
     values: FlavorValues(
       baseUrl: "https://dev.com/",
       showBanner: true,
+      alignment: Alignment.topRight,
+      location: BannerLocation.topEnd,
     ),
   );
   runApp(MyApp());
@@ -116,6 +118,8 @@ class CustomValues extends FlavorValues {
     this.baseUrl,
     this.showBanner = false,
     this.mapsApiKey,
+    BannerLocation location = BannerLocation.topStart,
+    AlignmentGeometry alignment = Alignment.topLeft,
   }) ;
 
   final String baseUrl, mapsApiKey;
